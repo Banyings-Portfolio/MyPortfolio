@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Follow() {
     return (
-        <div className="container pl-8 pb-12">
-            <h2 className="font-bold text-2xl mb-6 pt-8">Follow Me</h2>
+        <div className="container w-full md:w-1/2 lg:w-1/3 border-2 border-gray-300 rounded-lg p-6 shadow-md mx-4 my-4">
+            <h2 className="font-bold text-2xl mb-6 pt-4">Follow Me</h2>
             <div className="space-y-4">
                 <div className="flex items-center">
                     <Image src="/X.png" width={24} height={24} alt="X logo" className="mr-3 dark:invert" />

@@ -18,9 +18,9 @@ export default function DetailsWidget() {
     ];
 
     return (
-        <div className="projects-container p-4 md:p-6 rounded-lg ">
+        <div className="projects-container p-4 md:p-6 rounded-lg border-2 border-gray-300 shadow-md mx-4 my-4">
             <h2 className="text-2xl font-bold mb-6 p-4">My Projects</h2>
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
@@ -31,27 +31,30 @@ export default function DetailsWidget() {
 
 function ProjectCard({ project }) {
     return (
-        <div className="project  p-4 rounded-lg  w-full md:w-1/2">
-            <div className="project-image mb-4 relative w-12 h-12 rounded-full overflow-clip">
+        <div className="project p-6 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="project-image mb-4 relative w-16 h-16 mx-auto">
                 <Image
                     src={project.image}
                     alt={`${project.name} image`}
-                    width={48}
-                    height={48}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-full"
                 />
             </div>
-            <h3 className="company text-xl font-bold mb-2 ">{project.name}</h3>
-            <p className="description mb-4">
+            <h3 className="company text-xl font-bold mb-2 text-center">{project.name}</h3>
+            <p className="description mb-4 text-center">
                 {project.description}
             </p>
-            <Link
-                href={project.link}
-                className="link-to-project text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Visit Project
-            </Link>
+            <div className="text-center">
+                <Link
+                    href={project.link}
+                    className="link-to-project inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visit Project
+                </Link>
+            </div>
         </div>
     );
 }
