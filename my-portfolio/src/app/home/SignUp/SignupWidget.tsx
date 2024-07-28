@@ -1,18 +1,17 @@
 'use client';
-import { useState } from 'react'
+import React, { useState, FormEvent } from 'react';
 import Image from "next/image"
 
-export default function SignupWidget() {
-    const [email, setEmail] = useState('')
-    const [isSubscribed, setIsSubscribed] = useState(false)
+const SignupWidget = () => {
+    const [email, setEmail] = useState('');
+    const [isSubscribed, setIsSubscribed] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         if (email) {
-            setIsSubscribed(true)
-            // Here you would typically send the email to your backend
+            setIsSubscribed(true);
         }
-    }
+    };
 
     return (
         <div className="Notification w-full max-w-sm mx-auto lg:p-6 rounded-lg ">
@@ -54,3 +53,4 @@ export default function SignupWidget() {
         </div>
     )
 }
+export default SignupWidget;
