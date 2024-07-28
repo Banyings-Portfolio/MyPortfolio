@@ -6,10 +6,10 @@ export default function SkillsWidget() {
     ];
 
     return (
-        <div className="Skills-container pl-8">
+        <div className="Skills-container pl-8 border-2 border-gray-300 rounded-lg p-6 shadow-md mx-4 mb-4">
             <div>
                 <h1 className="pb-6 font-bold text-2xl">Skills</h1>
-                <p className="pb-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>Ut et massa mi.</p>
+                <p className="pb-4"> My journey in frontend development has equipped me with a robust set of skills, honed through hands-on experience with cutting-edge frameworks such as React and Next.js. Below, I showcase some of the key competencies I've mastered along the way</p>
             </div>
             <div className="flex flex-wrap gap-8">
                 {skills.map((skill) => (
